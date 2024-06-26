@@ -1,0 +1,295 @@
+/* Default theme */
+:root {
+  --primary-color: #31363F;
+  --secondary-color: #76ABAE;
+  --background-color: #222831;
+  --text-color: #EEEEEE;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --primary-color: #31363F;
+  --secondary-color: #76ABAE;
+  --background-color: #222831;
+  --text-color: #EEEEEE;
+}
+
+/* light theme */
+[data-theme="light"] {
+  --primary-color: #FFF3E0;
+  --secondary-color: #E6F5D0;
+  --background-color: #FFFFFF;
+  --text-color: #333333;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  user-select: none;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  display: none;
+}
+
+#bottom {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+}
+
+#middle {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.middle-bar {
+  display: flex;
+  height: 30px;
+}
+
+.copy-btn {
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#left,
+#right {
+  padding: 5px;
+}
+
+#left {
+  background-color: var(--primary-color);
+  width: calc(50vw - 5px);
+}
+
+#right {
+  background-color: var(--primary-color);
+  width: calc(50vw - 5px);
+}
+
+/* Divider */
+
+#divider {
+  width: 10px;
+  background-color: var(--secondary-color);
+  cursor: col-resize;
+}
+
+#divider:hover {
+  background-color: var(--background-color);
+  border: 0;
+}
+
+/* Language selection */
+
+.dropdown {
+  height: 30px;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 15px;
+  border: 2px var(--secondary-color) solid;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  line-height: 26px;
+}
+
+.dropdown-list {
+  width: 100px;
+  height: 40vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  display: none;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+}
+
+.dropdown-lang {
+  color: var(--text-color);
+  padding: 8px;
+  text-decoration: none;
+  display: block;
+  list-style: none;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.dropdown-lang:hover {
+  background-color: var(--primary-color);
+}
+
+/* Editor */
+
+.editor {
+  top: 10px;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+.ace-highlight {
+  background-color: lightblue;
+  position: absolute;
+}
+
+/* Bottom bar */
+
+#convert-btn {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border: 0;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  margin: auto;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#convert-btn:hover {
+  background-color: var(--background-color);
+}
+
+#key-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 60px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  background-color: var(--text-color);
+  filter: invert(100);
+  cursor: pointer;
+  padding: 5px;
+}
+
+#key-btn > img {
+  height: 100%;
+}
+
+#theme-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+  background-color: var(--text-color);
+  filter: invert(100);
+  cursor: pointer;
+  padding: 0;
+}
+
+#theme-btn > img {
+  height: 100%;
+}
+
+/* Prompt */
+
+#page-cover {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: var(--background-color);
+  opacity: 30%;
+}
+
+#prompt-box {
+  display: none;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  width: 400px;
+  height: 120px;
+  padding: 5px;
+  z-index: 999;
+  font-size: 20px;
+  background-color: var(--primary-color);
+}
+
+#prompt-box > p {
+  margin: 10px;
+}
+
+#prompt-box > input {
+  width: 60%;
+  height: 15%;
+}
+
+#prompt-btn {
+  display: flex;
+  width: 60%;
+  height: 15%;
+  margin: auto;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+#prompt-btn > button {
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: var(--secondary-color);
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#prompt-btn > button:hover {
+  background-color: var(--background-color);
+}
+
+/* Popup */
+
+#message-popup {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  bottom: 80px;
+
+  width: min-content;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 20px;
+
+  background-color: var(--text-color);
+  color: var(--background-color);
+
+  text-align: center;
+
+  overflow: hidden;
+  z-index: 99999;
+  display: none;
+}

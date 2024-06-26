@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <link rel='stylesheet' href='/nprogress-0.2.0/nprogress.css'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Converter</title>
+</head>
+
+<body>
+  <div id="page-cover"></div>
+  <div id="container">
+    <div id="middle">
+      <div id="left">
+        <div class="middle-bar">
+          <div id="src-language"></div>
+          <img src="src/assets/file-copy-line.svg" id="src-copy" class="copy-btn"></button>
+        </div>
+        <div id="src-editor" class="editor"></div>
+      </div>
+      <div id="divider"></div>
+      <div id="right">
+        <div class="middle-bar">
+          <div id="tgt-language"></div>
+          <img src="src/assets/file-copy-line.svg" id="tgt-copy" class="copy-btn"></button>
+        </div>
+        <div id="tgt-editor" class="editor"></div>
+      </div>
+    </div>
+    <div id="bottom">
+      <button type="button" id="convert-btn">Convert</button>
+      <button type="button" id="key-btn">
+        <img src="./src/assets/key-fill.svg">
+      </button>
+      <button type="button" id="theme-btn">
+        <img src="./src/assets/contrast-2-line.svg" id="theme-img">
+      </button>
+    </div>
+  </div>
+  <!-- Prompt -->
+  <div id="prompt-box">
+    <p>API Key</p>
+    <input type="text" id="prompt-input">
+    <div id="prompt-btn">
+      <button id="prompt-cancel">Cancel</button>
+      <button id="prompt-save">Save</button>
+    </div>
+  </div>
+  <!-- Popup -->
+  <div id="message-popup"></div>
+  <script src="/nprogress-0.2.0/nprogress.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
