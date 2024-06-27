@@ -181,10 +181,11 @@ let connections: Map<number, number[]> | null = null;
     customLanguage.innerText = 'Custom...';
     customLanguage.addEventListener('click', (e) => {
       e.preventDefault();
-      const language = prompt('Custom Language');
+      showPrompt('Custom Language', '', (language: string) => {
       if (language === null) return;
       button.innerText = language;
       cb(language);
+      });
     });
 
     languageList.appendChild(customLanguage);
@@ -299,8 +300,8 @@ let connections: Map<number, number[]> | null = null;
 
     const model = getModel();
     if (model === null) {
-      showMsg('Set the API Key First');
-      showPrompt();
+      showMsg('Set API Key First');
+      showPrompt('API Key', '', (v: string) => localStorage.setItem('apiKey', v));
       return [null, null];
     }
 
@@ -411,33 +412,33 @@ let connections: Map<number, number[]> | null = null;
 const showPrompt = (() => {
   const box = document.getElementById('prompt-box')!;
   const cover = document.getElementById('page-cover')!;
+  const title = document.getElementById('prompt-title')!;
   const cancel = document.getElementById('prompt-cancel')!;
   const save = document.getElementById('prompt-save')!;
   const input: HTMLInputElement = document.getElementById('prompt-input')! as HTMLInputElement;
-  const btn = document.getElementById('key-btn')!;
+
+  let callback: (v: string) => void = () => { };
 
   input.addEventListener('focus', () => {
     input.select();
   });
 
-  function showPrompt() {
-    const key = localStorage.getItem('apiKey');
-    if (key === null) input.value = '';
-    else input.value = key;
+  function showPrompt(promptTitle: string, value: string, cb: (v: string) => void) {
+    callback = cb;
+    title.innerText = promptTitle;
+    input.value = value;
     box.style.display = 'block';
     cover.style.display = 'block';
   }
-
-  btn.addEventListener('click', showPrompt);
   cancel.addEventListener('click', () => {
     box.style.display = 'none';
     cover.style.display = 'none';
   });
   save.addEventListener('click', () => {
-    const apiKey = input.value;
-    localStorage.setItem('apiKey', apiKey);
     box.style.display = 'none';
     cover.style.display = 'none';
+    callback(input.value);
+    callback = () => { };
   });
 
   return showPrompt;
