@@ -240,11 +240,11 @@ body {
   background-color: var(--primary-color);
 }
 
-#prompt-box > p {
+#prompt-box>p {
   margin: 10px;
 }
 
-#prompt-box > input {
+#prompt-box>input {
   width: 60%;
   height: 15%;
 }
@@ -258,7 +258,7 @@ body {
   justify-content: space-between;
 }
 
-#prompt-btn > button {
+#prompt-btn>button {
   width: 80px;
   height: 30px;
   border: none;
@@ -267,7 +267,7 @@ body {
   cursor: pointer;
 }
 
-#prompt-btn > button:hover {
+#prompt-btn>button:hover {
   background-color: var(--background-color);
 }
 
