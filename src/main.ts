@@ -127,7 +127,8 @@ let connections: Map<number, number[]> | null = null;
 // Language selection
 (() => {
   const LanguageList: Map<string, string> = new Map([
-    ['C/C++', 'c_cpp'],
+    ['C', 'c_cpp'],
+    ['C++', 'c_cpp'],
     ['C#', 'csharp'],
     ['CSS', 'css'],
     ['Go', 'golang'],
