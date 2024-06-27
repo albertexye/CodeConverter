@@ -327,10 +327,7 @@ let connections: Map<number, number[]> | null = null;
       const [text, conn] = value;
       connections = conn;
       NProgress.done();
-      if (text === null || conn === null) {
-        showMsg('Unable to Convert');
-        return;
-      }
+      if (text === null || conn === null) return;
       tgtEditor.setValue(text);
     });
   });
