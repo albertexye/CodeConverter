@@ -275,7 +275,7 @@ body {
   padding-right: 20px;
   bottom: 80px;
 
-  width: min-content;
+  width: fit-content;
   height: 30px;
   line-height: 30px;
   border-radius: 20px;
