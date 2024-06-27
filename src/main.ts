@@ -1,7 +1,3 @@
-import darkURL from './assets/contrast-2-fill.svg';
-import lightURL from './assets/contrast-2-line.svg';
-import systemURL from './assets/settings-5-fill.svg';
-
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 declare const NProgress: any;
@@ -59,23 +55,30 @@ let connections: Map<number, number[]> | null = null;
 
   let themeTemp: Theme = currentTheme;
   const button = document.getElementById('theme-btn')!;
-  const image: HTMLImageElement = document.getElementById('theme-img')! as HTMLImageElement;
-  const getThemeURL = () => {
+  const darkSVG = document.getElementById('theme-dark')!;
+  const lightSVG = document.getElementById('theme-light')!;
+  const systemSVG = document.getElementById('theme-system')!;
+  function showIcon() {
+    darkSVG.style.display = 'none';
+    lightSVG.style.display = 'none';
+    systemSVG.style.display = 'none';
     switch (themeTemp) {
       case Theme.Dark:
-        return systemURL;
+        darkSVG.style.display = 'inline';
+        break;
       case Theme.Light:
-        return darkURL;
+        lightSVG.style.display = 'inline';
+        break;
       case Theme.System:
-        return lightURL;
+        systemSVG.style.display = 'inline';
     }
-  };
-  button.style.backgroundImage = getThemeURL();
+  }
+  showIcon();
   button.addEventListener('click', () => {
     if (themeTemp === Theme.System) themeTemp = Theme.Light;
     else if (themeTemp === Theme.Light) themeTemp = Theme.Dark;
     else themeTemp = Theme.System;
-    image.src = getThemeURL();
+    showIcon();
     setTheme(themeTemp);
   });
 })();
