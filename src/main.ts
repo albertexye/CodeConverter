@@ -467,5 +467,15 @@ const showMsg = (() => {
   return showMsg;
 })();
 
+// API Key Button
+(() => {
+  document.getElementById('key-btn')!.addEventListener('click', () => {
+    const key = localStorage.getItem('apiKey');
+    const cb = (v: string) => localStorage.setItem('apiKey', v);
+    if (key === null) showPrompt('API Key', '', cb);
+    else showPrompt('API Key', key, cb);
+  });
+})();
+
 // Show the container
 document.getElementById('container')!.style.display = 'flex';
