@@ -63,9 +63,8 @@ body {
 }
 
 .copy-btn {
-  transition: background-color 0.2s ease-in-out;
-  border-radius: 15px;
   cursor: pointer;
+  fill: var(--text-color);
 }
 
 #left,
@@ -166,7 +165,9 @@ body {
 }
 
 #convert-btn:hover {
-  background-color: var(--background-color);
+#convert-btn>svg {
+  fill: var(--text-color);
+  height: 80%;
 }
 
 #key-btn {
@@ -183,8 +184,9 @@ body {
   padding: 5px;
 }
 
-#key-btn > img {
-  height: 100%;
+#key-btn>svg {
+  fill: var(--text-color);
+  height: 80%;
 }
 
 #theme-btn {
@@ -201,8 +203,10 @@ body {
   padding: 0;
 }
 
-#theme-btn > img {
-  height: 100%;
+#theme-btn>svg {
+  fill: var(--text-color);
+  height: 80%;
+  display: none;
 }
 
 /* Prompt */
