@@ -4,6 +4,7 @@
   --secondary-color: #31363F;
   --background-color: #232323;
   --text-color: #EEEEEE;
+  --ace-color: #555555;
 }
 
 /* Dark theme */
@@ -12,6 +13,7 @@
   --secondary-color: #31363F;
   --background-color: #232323;
   --text-color: #EEEEEE;
+  --ace-color: #555555;
 }
 
 /* light theme */
@@ -20,6 +22,7 @@
   --secondary-color: #379777;
   --background-color: #E8E8E8;
   --text-color: #45474B;
+  --ace-color: lightblue;
 }
 
 html,
@@ -143,7 +146,7 @@ body {
 }
 
 .ace-highlight {
-  background-color: lightblue;
+  background-color: var(--ace-color);
   position: absolute;
 }
 
