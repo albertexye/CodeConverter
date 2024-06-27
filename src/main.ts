@@ -14,6 +14,9 @@ let srcLang = 'text';
 let tgtLang = 'text';
 let connections: Map<number, number[]> | null = null;
 
+const aceDarkTheme = 'clouds_midnight';
+const aceLightTheme = 'xcode';
+
 // Theme
 (() => {
   enum Theme { Light, Dark, System }
