@@ -95,12 +95,17 @@ body {
 .dropdown-btn {
   background-color: transparent;
   color: var(--text-color);
+  transition: background-color 0.2s ease-in-out;
   font-size: 15px;
   border: 2px var(--secondary-color) solid;
   cursor: pointer;
   width: 100px;
   height: 30px;
   line-height: 26px;
+}
+
+.dropdown-btn:hover {
+  background-color: var(--primary-color);
 }
 
 .dropdown-list {
@@ -157,6 +162,9 @@ body {
 }
 
 #convert-btn:hover {
+  background-color: var(--primary-color);
+}
+
 #convert-btn>svg {
   fill: var(--text-color);
   height: 80%;
@@ -169,11 +177,13 @@ body {
   width: 60px;
   height: 60px;
   border: 0;
-  border-radius: 20px;
-  background-color: var(--text-color);
-  filter: invert(100);
+  transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   padding: 0;
+}
+
+#key-btn:hover {
+  background-color: var(--primary-color);
 }
 
 #key-btn>svg {
@@ -188,11 +198,13 @@ body {
   width: 60px;
   height: 60px;
   border: 0;
-  border-radius: 20px;
-  background-color: var(--text-color);
-  filter: invert(100);
+  transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   padding: 0;
+}
+
+#theme-btn:hover {
+  background-color: var(--primary-color);
 }
 
 #theme-btn>svg {
