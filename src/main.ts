@@ -41,7 +41,7 @@ const aceLightTheme = 'xcode';
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', systemThemeCallback);
     }
 
-    const aceThemeName = currentTheme === Theme.Dark ? 'monokai' : 'xcode';
+    const aceThemeName = currentTheme === Theme.Dark ? aceDarkTheme : aceLightTheme;
     const aceThemePath = `ace/theme/${aceThemeName}`;
     srcEditor.setTheme(aceThemePath);
     tgtEditor.setTheme(aceThemePath);
