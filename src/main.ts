@@ -248,7 +248,7 @@ let connections: Map<number, number[]> | null = null;
 
   function getModel() {
     const apiKey = localStorage.getItem('apiKey');
-    if (apiKey === null) return null;
+    if (apiKey === null || apiKey === '') return null;
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
       model: "gemini-1.5-flash",
@@ -298,7 +298,15 @@ let connections: Map<number, number[]> | null = null;
       { text: "target code: " },
     ];
 
-    const model = getModel();
+    let model;
+    try {
+      model = getModel();
+    } catch (e) {
+      showMsg('Invalid API Key');
+      showPrompt('API Key', '', (v: string) => localStorage.setItem('apiKey', v));
+      console.warn(`error getting Gemini model: ${e}`);
+      return [null, null];
+    }
     if (model === null) {
       showMsg('Set API Key First');
       showPrompt('API Key', '', (v: string) => localStorage.setItem('apiKey', v));
@@ -316,7 +324,15 @@ let connections: Map<number, number[]> | null = null;
       console.warn(`error calling Gemini API: ${e}`);
       return [null, null];
     }
-    return parseGeminiResponse(result.response.text());
+    let text;
+    try {
+      text = result.response.text();
+    } catch (e) {
+      showMsg('Failed to Convert');
+      console.warn(`error calling Gemini API: ${e}`);
+      return [null, null];
+    }
+    return parseGeminiResponse(text);
   }
 
   document.getElementById('convert-btn')!.addEventListener('click', () => {
