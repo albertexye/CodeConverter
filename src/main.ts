@@ -2,6 +2,11 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 declare const NProgress: any;
 declare const ace: any;
+declare global {
+  interface Window {
+    showSaveFilePicker?: any;
+  }
+}
 
 const srcEditor = ace.edit('src-editor', { mode: 'ace/mode/text' });
 const tgtEditor = ace.edit('tgt-editor', { mode: 'ace/mode/text' });
@@ -375,6 +380,7 @@ let connections: Map<number, number[]> | null = null;
   });
 
   async function save(editor: any) {
+    if (window.showSaveFilePicker === undefined) return;
     let file: FileSystemFileHandle;
     try {
       file = await window.showSaveFilePicker({
