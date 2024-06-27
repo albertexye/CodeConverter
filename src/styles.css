@@ -1,25 +1,25 @@
 /* Default theme */
 :root {
-  --primary-color: #31363F;
-  --secondary-color: #76ABAE;
-  --background-color: #222831;
+  --primary-color: #76ABAE;
+  --secondary-color: #31363F;
+  --background-color: #232323;
   --text-color: #EEEEEE;
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --primary-color: #31363F;
-  --secondary-color: #76ABAE;
-  --background-color: #222831;
+  --primary-color: #76ABAE;
+  --secondary-color: #31363F;
+  --background-color: #232323;
   --text-color: #EEEEEE;
 }
 
 /* light theme */
 [data-theme="light"] {
-  --primary-color: #FFF3E0;
-  --secondary-color: #E6F5D0;
-  --background-color: #FFFFFF;
-  --text-color: #333333;
+  --primary-color: #F4CE14;
+  --secondary-color: #379777;
+  --background-color: #E8E8E8;
+  --text-color: #45474B;
 }
 
 html,
@@ -77,12 +77,12 @@ body {
 
 #divider {
   width: 10px;
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
   cursor: col-resize;
 }
 
 #divider:hover {
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
   border: 0;
 }
 
@@ -93,7 +93,7 @@ body {
 }
 
 .dropdown-btn {
-  background-color: transparent;
+  background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.2s ease-in-out;
   font-size: 15px;
@@ -150,8 +150,7 @@ body {
 /* Bottom bar */
 
 #convert-btn {
-  color: var(--text-color);
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border: 0;
   cursor: pointer;
   width: 100px;
@@ -177,6 +176,7 @@ body {
   width: 60px;
   height: 60px;
   border: 0;
+  background-color: var(--secondary-color);
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   padding: 0;
@@ -198,6 +198,7 @@ body {
   width: 60px;
   height: 60px;
   border: 0;
+  background-color: var(--secondary-color);
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   padding: 0;
@@ -241,7 +242,7 @@ body {
   padding: 5px;
   z-index: 999;
   font-size: 20px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 #prompt-box>p {
@@ -266,13 +267,14 @@ body {
   width: 80px;
   height: 30px;
   border: none;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--text-color);
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
 }
 
 #prompt-btn>button:hover {
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
 }
 
 /* Popup */
