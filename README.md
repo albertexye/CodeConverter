@@ -1,6 +1,6 @@
 # Code Converter
 
-A powerful code conversion tool that transforms code from one programming language to another using the Gemini API. Built with Tauri and Vanilla TypeScript for a fast and efficient desktop application experience.
+A simple code conversion tool that transforms code from one programming language to another using the Gemini API. Built with Tauri and Vanilla TypeScript for a fast and efficient desktop application experience.
 
 ## Features
 
