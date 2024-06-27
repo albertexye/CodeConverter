@@ -342,6 +342,7 @@ const aceLightTheme = 'xcode';
   document.getElementById('convert-btn')!.addEventListener('click', () => {
     const value = srcEditor.getValue();
     if (value === '') return;
+    NProgress.start(); // start the progress bar
     askGemini('```' + srcLang + '\n' + addLineNumbers(value) + '\n```\nto ' + tgtLang).then((value) => {
       NProgress.start();
       const [text, conn] = value;
