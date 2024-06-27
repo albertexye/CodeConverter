@@ -103,8 +103,8 @@ let connections: Map<number, number[]> | null = null;
   document.addEventListener('mousemove', function (e) {
     if (!isDragging) return;
     e.preventDefault();
-    left.style.width = `${e.clientX - 15}px`;
-    right.style.width = `${window.innerWidth - e.clientX - 15}px`;
+    left.style.width = `${e.clientX - 5}px`;
+    right.style.width = `${window.innerWidth - e.clientX - 5}px`;
   });
 
   document.addEventListener('mouseup', (e) => {

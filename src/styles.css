@@ -69,16 +69,7 @@ body {
 
 #left,
 #right {
-  padding: 5px;
-}
-
-#left {
-  background-color: var(--primary-color);
-  width: calc(50vw - 5px);
-}
-
-#right {
-  background-color: var(--primary-color);
+  padding-top: 5px;
   width: calc(50vw - 5px);
 }
 
