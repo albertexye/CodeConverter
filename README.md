@@ -4,7 +4,7 @@ A simple code conversion tool that transforms code from one programming language
 
 ## Features
 
-- Convert code between various programming languages
+- Convert code between various programming languages and natural languages
 - Utilizes Google's Generative AI (Gemini API) for accurate translations
 - Built with Tauri for a lightweight, cross-platform desktop application
 - Vanilla TypeScript for improved performance and type safety
@@ -12,17 +12,17 @@ A simple code conversion tool that transforms code from one programming language
 - Smooth loading indicators with NProgress
 - Light and Dark Themes
 
-## Prerequisites
+## Install Binary
+
+- Choose the latest release and download the corresponding binary. 
+
+## Prerequisites for Building
 
 Before you begin, ensure you have met the following requirements:
 
 - Node.js (latest LTS version recommended)
 - Rust (for Tauri)
 - A Gemini API key from Google
-
-## Install Binary
-
-- Choose the latest release and download the corresponding binary. 
 
 ## Install from Source
 
@@ -39,18 +39,17 @@ Before you begin, ensure you have met the following requirements:
 
 ## Usage
 
-1. Start the development server:
-   ```
-   npm run tauri dev
-   ```
+1. Set the API Key by clicking the key icon at the bottom right. 
 
-2. Use the Ace Editor to input your source code.
+2. Select the source and target programming languages. 
 
-3. Select the source and target programming languages.
+3. Drag the middle bar to adjust the editor size. 
 
-4. Click the "Convert" button to transform your code.
+3. Input your source code into the text editor on the left.
 
-5. View the converted code in the output editor.
+4. Click the convert button to transform your code.
+
+5. View, copy or save (`Ctrl-S` on Windows, `Cmd-S` on macOS) the converted code in the output editor.
 
 ## Building for Production
 
