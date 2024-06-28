@@ -163,15 +163,9 @@ const aceLightTheme = 'xcode';
     ['Java', 'java'],
     ['JavaScript', 'javascript'],
     ['JSON', 'json'],
-    ['Lua', 'lua'],
     ['Markdown', 'markdown'],
-    ['ObjectiveC', 'objectivec'],
-    ['PHP', 'php'],
     ['Python', 'python'],
-    ['SQL', 'sql'],
     ['x86 ASM', 'assembly_x86'],
-    ['XML', 'xml'],
-    ['YAML', 'yaml'],
   ]);
 
   // create a dropdown menu in an element
