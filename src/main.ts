@@ -472,6 +472,12 @@ const showPrompt = (() => {
     input.select();
   });
 
+  function hidePrompt() {
+    // hide the box
+    box.style.display = 'none';
+    cover.style.display = 'none';
+  }
+
   function showPrompt(promptTitle: string, value: string, cb: (v: string) => void) {
     callback = cb; // set the callback
     // set the title and the existing input value
@@ -481,18 +487,13 @@ const showPrompt = (() => {
     box.style.display = 'block';
     cover.style.display = 'block';
   }
-  cancel.addEventListener('click', () => {
-    // hide the box
-    box.style.display = 'none';
-    cover.style.display = 'none';
-  });
+  cancel.addEventListener('click', hidePrompt);
   save.addEventListener('click', () => {
-    // hide the box
-    box.style.display = 'none';
-    cover.style.display = 'none';
+    hidePrompt();
     callback(input.value); // call the callback
     callback = () => { }; // reset the callback function
   });
+  cover.addEventListener('click', hidePrompt);
 
   return showPrompt;
 })();
