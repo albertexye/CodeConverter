@@ -543,3 +543,8 @@ const showMsg = (() => {
 
 // Show the container
 document.getElementById('container')!.style.display = 'flex';
+(() => {
+  const loading = document.getElementById('loading')!;
+  loading.style.opacity = '0';
+  setTimeout(() => loading.remove(), 1000);
+})();
