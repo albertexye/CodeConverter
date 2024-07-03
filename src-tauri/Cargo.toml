@@ -1,6 +1,6 @@
 [package]
 name = "codeconverter"
-version = "0.0.2"
+version = "0.1.0"
 description = "A simple code conversion tool that transforms code from one programming language to another using the Gemini API. "
 authors = ["albertexye"]
 edition = "2021"
