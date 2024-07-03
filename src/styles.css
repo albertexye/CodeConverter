@@ -64,7 +64,7 @@ body {
 #bottom {
   background-color: var(--secondary-color);
   padding: 0;
-  height: 60px;
+  height: 110px;
   text-align: center;
 }
 
@@ -167,15 +167,58 @@ body {
 
 /* Bottom bar */
 
+#convert-msg {
+  position: absolute;
+  left: 15%;
+  bottom: 62px;
+  
+  width: 70%;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+  
+  border-radius: 5px;
+
+  resize: none;
+
+  z-index: 999;
+}
+
+#convert-msg-fold {
+  position: absolute;
+  left: calc(85% + 10px);
+  bottom: 60px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  padding: 0;
+
+  background-color: var(--secondary-color);
+  
+  cursor: pointer;
+
+  rotate: 0deg;
+  transition: rotate 0.2s ease-in-out;
+}
+
+#convert-msg-fold>svg {
+  fill: var(--text-color);
+  height: 80%;
+}
+
 #convert-btn {
   background-color: var(--secondary-color);
   border: 0;
   cursor: pointer;
   width: 100px;
   height: 60px;
-  margin: auto;
   transition: background-color 0.2s ease-in-out;
   padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: calc(50vw - 50px);
 }
 
 #convert-btn:hover {

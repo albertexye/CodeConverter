@@ -369,6 +369,27 @@ const aceLightTheme = 'xcode';
     return parseGeminiResponse(text);
   }
 
+  let folded = false;
+  const convertMsg = document.getElementById('convert-msg')! as HTMLTextAreaElement;
+  const foldBtn = document.getElementById('convert-msg-fold')!;
+  foldBtn.addEventListener('click', () => {
+    folded = !folded;
+    convertMsg.style.height = '';
+    if (folded) {
+      foldBtn.style.rotate = '180deg';
+      foldBtn.title = 'Fold';
+    } else {
+      convertMsg.style.height = String(convertMsg.scrollHeight) + 'px';
+      foldBtn.style.rotate = '0deg';
+      foldBtn.title = 'Expand';
+    }
+  });
+  convertMsg.addEventListener('input', () => {
+    if (folded) return;
+    convertMsg.style.height = '';
+    convertMsg.style.height = String(convertMsg.scrollHeight) + 'px';
+  });
+
   document.getElementById('convert-btn')!.addEventListener('click', () => {
     // get source code
     const value = srcEditor.getValue();
@@ -377,7 +398,9 @@ const aceLightTheme = 'xcode';
       return;
     }
     NProgress.start(); // start the progress bar
-    askGemini('```' + srcLang + '\n' + addLineNumbers(value) + '\n```\nto ' + tgtLang).then((value) => {
+    askGemini(
+      '```' + srcLang + '\n' + addLineNumbers(value) + '\n```\nto ' + tgtLang + '\n' + convertMsg.value
+    ).then((value) => {
       const [text, conn] = value;
       connections = conn;
       NProgress.done(); // end the progress bar
