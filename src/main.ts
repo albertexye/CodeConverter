@@ -500,7 +500,7 @@ const showPrompt = (() => {
 
 // Message popup
 const showMsg = (() => {
-  const messagePopup = document.getElementById("message-popup")!;
+  const messagePopup = document.getElementById('message-popup')!;
   let lastID: number | null = null; // save the setTimeout id so it can be canceled later
 
   function showMsg(message: string) {
