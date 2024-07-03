@@ -319,5 +319,8 @@ body {
 
   overflow: hidden;
   z-index: 99999;
+  
+  opacity: 0;
   display: none;
+  transition: opacity 0.2s ease-in-out;
 }

@@ -511,12 +511,18 @@ const showMsg = (() => {
     }
 
     messagePopup.innerText = message; // Set the message text
-    messagePopup.style.display = "block"; // Show the popup
+    messagePopup.style.display = 'block';
+    setTimeout(() => {
+      messagePopup.style.opacity = '1';
+    }, 0.0001); // Show the popup
 
     // Close the popup after 3 seconds
     lastID = setTimeout(() => {
-      messagePopup.style.display = "none";
+      messagePopup.style.opacity = '0';
+      lastID = setTimeout(() => {
+        messagePopup.style.display = 'none';
       lastID = null;
+      }, 200);
     }, 3000);
   }
   return showMsg;
