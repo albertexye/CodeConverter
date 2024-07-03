@@ -538,11 +538,6 @@ const showMsg = (() => {
   });
 })();
 
-// Remove the default contextmenu
-window.addEventListener('contextmenu', (e) => {
-  e.preventDefault();
-})
-
 // Show the container
 document.getElementById('container')!.style.display = 'flex';
 (() => {
