@@ -39,7 +39,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Usage
 
-1. Set the API Key by clicking the key icon at the bottom right. 
+1. Set the API Key by clicking the key icon at the bottom right. [How to get a Gemini API Key](https://ai.google.dev/gemini-api/docs/api-key)
 
 2. Select the source and target programming languages. 
 
@@ -47,9 +47,11 @@ Before you begin, ensure you have met the following requirements:
 
 3. Input your source code into the text editor on the left.
 
-4. Click the convert button to transform your code.
+4. Provide any additional information or requirements in the convert message bar on the bottom. 
 
-5. View, copy or save (`Ctrl-S` on Windows, `Cmd-S` on macOS) the converted code in the output editor.
+5. Click the convert button to transform your code.
+
+6. View, copy or save (`Ctrl-S` on Windows, `Cmd-S` on macOS) the converted code in the output editor.
 
 ## Building for Production
 
