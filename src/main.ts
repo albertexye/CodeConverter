@@ -524,7 +524,7 @@ const showMsg = (() => {
       messagePopup.style.opacity = '0';
       lastID = setTimeout(() => {
         messagePopup.style.display = 'none';
-      lastID = null;
+        lastID = null;
       }, 200);
     }, 3000);
   }
