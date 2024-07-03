@@ -372,7 +372,10 @@ const aceLightTheme = 'xcode';
   document.getElementById('convert-btn')!.addEventListener('click', () => {
     // get source code
     const value = srcEditor.getValue();
-    if (value === '') return;
+    if (value === '') {
+      showMsg("No source code provided");
+      return;
+    }
     NProgress.start(); // start the progress bar
     askGemini('```' + srcLang + '\n' + addLineNumbers(value) + '\n```\nto ' + tgtLang).then((value) => {
       const [text, conn] = value;
