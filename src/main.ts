@@ -374,12 +374,12 @@ const aceLightTheme = 'xcode';
   const foldBtn = document.getElementById('convert-msg-fold')!;
   foldBtn.addEventListener('click', () => {
     folded = !folded;
-    convertMsg.style.height = '';
+    convertMsg.style.maxHeight = '40px';
     if (folded) {
       foldBtn.style.rotate = '180deg';
       foldBtn.title = 'Fold';
     } else {
-      convertMsg.style.height = String(convertMsg.scrollHeight) + 'px';
+      convertMsg.style.maxHeight = '60vh';
       foldBtn.style.rotate = '0deg';
       foldBtn.title = 'Expand';
     }

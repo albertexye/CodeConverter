@@ -173,6 +173,8 @@ body {
   bottom: 62px;
 
   width: 70%;
+  max-height: 60vh;
+  transition: max-height 0.3s ease-in-out;
 
   background-color: var(--background-color);
   color: var(--text-color);
