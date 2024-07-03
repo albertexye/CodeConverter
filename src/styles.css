@@ -171,12 +171,12 @@ body {
   position: absolute;
   left: 15%;
   bottom: 62px;
-  
+
   width: 70%;
-  
+
   background-color: var(--background-color);
   color: var(--text-color);
-  
+
   border-radius: 5px;
 
   resize: none;
@@ -196,7 +196,7 @@ body {
   padding: 0;
 
   background-color: var(--secondary-color);
-  
+
   cursor: pointer;
 
   rotate: 0deg;
@@ -362,7 +362,7 @@ body {
 
   overflow: hidden;
   z-index: 99999;
-  
+
   opacity: 0;
   display: none;
   transition: opacity 0.2s ease-in-out;
